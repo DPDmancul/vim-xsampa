@@ -1,0 +1,39 @@
+*xsampa*  *xsampa.txt*  automatic X-SAMPA to IPA translation
+
+Author:  KeyboardFire <andy@keyboardfire.com>
+Author:  Davide Peressoni <davide.peressoni@tuta.io>
+License: GPLv3
+
+1. Overview                    |xsampa-overview|
+2. Mappings                    |xsampa-mappings|
+3. Configuration               |xsampa-configuration|
+
+===============================================================================
+OVERVIEW                                                       *xsampa-overview*
+
+xsampa is a plugin that translates X-SAMPA text to IPA in real time.  For
+example, if a user enables xsampa and then types `G`, the buffer becomes `ɣ`.
+Subsequently typing `\` results in `ɢ`, and adding `_<` results in `ʛ`.
+
+===============================================================================
+MAPPINGS                                                       *xsampa-mappings*
+
+-------------------------------------------------------------------------------
+                    *xsampa_<C-l>*
+<C-l>               Toggle xsampa in insert mode.  By default, xsampa has no
+                    effect and allows the user to type normally.  When the
+                    toggle key is pressed, xsampa begins translating X-SAMPA to
+                    IPA.  Exiting insert mode automatically disables xsampa
+                    (until toggled on again).
+
+===============================================================================
+CONFIGURATION                                             *xsampa-configuration*
+
+-------------------------------------------------------------------------------
+                                                            *'g:xsampa_trigger'*
+Default: '<C-l>'
+
+Specifies which key toggles X-SAMPA to IPA translation.  This should be
+specified in the same format as you would use for a |:map|.  For example: >
+    let g:xsampa_trigger = '<C-j>'
+<
